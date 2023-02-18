@@ -1,10 +1,12 @@
 import React from 'react';
 
-import css from './Movies.module.css';
+import css from './MovieCard.module.css';
 import {Link} from "react-router-dom";
 import {StarsRating} from "../StarsRating/StarsRating";
 import {PosterPreview} from "../PosterPreview/PosterPreview";
 import {GenreBadge} from "../GenreBadge/GenreBadge";
+// import {useTheme} from "../../hooks/useTheme";
+
 // import {}
 const MovieCard = ({film}) => {
     // {
@@ -31,9 +33,9 @@ const MovieCard = ({film}) => {
 
     return (
         <div className={css.card}>
+            <PosterPreview path={poster_path}/>
             <StarsRating rate={vote_average}/>
             <p>{vote_count} votes</p>
-            <PosterPreview path={poster_path}/>
             <Link to={{pathname: `/movies/${id}`}}>{original_title}</Link>
             <GenreBadge ids={genre_ids}/>
         </div>

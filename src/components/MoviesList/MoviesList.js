@@ -15,9 +15,9 @@ const MoviesList = () => {
         dispatch(carActions.getAll({page}));
     },[dispatch,page]);
     return (
-        <div>
+        <>
             {!!movies.length && movies.map(film => <MovieCard key={film.id} film={film}/>)}
-        </div>
+        </>
     );
 };
 

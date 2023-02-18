@@ -14,7 +14,7 @@ const GenreBadge = ({ids}) => {
         <div style={{display:'flex', flexWrap:'wrap', margin:'1px'}}>
             {/*{ids.map(val => <span key={val}  className="badge rounded-pill text-bg-primary">{genres.val}</span>)}*/}
             {genres.filter(val => ids.includes(val.id)).map(val=> {
-                return <Badge key={val.id} pill bg={'primary'}>{val.name}</Badge>
+                return <Badge key={val.id} pill bg={'primary'} style={{margin:'1px'}}>{val.name}</Badge>
             })}
         </div>
     );
