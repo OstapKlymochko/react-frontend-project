@@ -16,7 +16,7 @@ const MoviesList = () => {
     },[dispatch,page]);
     return (
         <div>
-            {!!movies.length && movies.slice(0,1).map(film => <MovieCard key={film.id} film={film}/>)}
+            {!!movies.length && movies.map(film => <MovieCard key={film.id} film={film}/>)}
         </div>
     );
 };

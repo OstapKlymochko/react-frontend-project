@@ -1,12 +1,9 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 
-import {postersURL} from "../../configs/urls";
 import css from './Movies.module.css';
-import {Link, Navigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import {StarsRating} from "../StarsRating/StarsRating";
 import {PosterPreview} from "../PosterPreview/PosterPreview";
-import {useDispatch, useSelector} from "react-redux";
-import {genreActions} from "../../redux";
 import {GenreBadge} from "../GenreBadge/GenreBadge";
 // import {}
 const MovieCard = ({film}) => {
@@ -30,20 +27,15 @@ const MovieCard = ({film}) => {
     //     "vote_average": 7.5,
     //     "vote_count": 3161
     // }
-    const {id, original_title, vote_average,vote_count,poster_path,release_date, genre_ids} = film;
-    let {genres} = useSelector(state => state.genres);
-    let dispatch = useDispatch();
-    useEffect(()=>{
-        dispatch(genreActions.getAll());
-    },[dispatch]);
-    console.log(genres);
+    const {id, original_title, vote_average, vote_count, poster_path, release_date, genre_ids} = film;
+
     return (
         <div className={css.card}>
             <StarsRating rate={vote_average}/>
             <p>{vote_count} votes</p>
             <PosterPreview path={poster_path}/>
-            <Link to={{pathname:`/movies/${id}`}} >{original_title}</Link>
-            <GenreBadge/>
+            <Link to={{pathname: `/movies/${id}`}}>{original_title}</Link>
+            <GenreBadge ids={genre_ids}/>
         </div>
     );
 };
