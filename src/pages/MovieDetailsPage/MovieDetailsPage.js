@@ -1,6 +1,8 @@
 import React from 'react';
-import {MoviesInfo} from "../../components";
 import {useLocation} from "react-router-dom";
+
+import {MoviesInfo} from "../../components";
+
 const MovieDetailsPage = () => {
     const {state} = useLocation();
     // console.log(state);

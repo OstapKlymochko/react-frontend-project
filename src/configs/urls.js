@@ -1,4 +1,3 @@
-
 const baseURL = 'https://api.themoviedb.org/3';
 const postersURL = 'https://image.tmdb.org/t/p/original';
 

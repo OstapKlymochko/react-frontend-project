@@ -3,11 +3,9 @@ import {Navigate, Route, Routes} from "react-router-dom";
 
 import {MainLayout} from "./layouts";
 import {MovieDetailsPage, MoviesPage} from "./pages";
-import {useTheme} from "./hooks/useTheme";
 
 const App = () => {
 
-    let {theme, setTheme} = useTheme();
     return (
         // <>
         //   <MoviesList/>

@@ -1,5 +1,6 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {moviesServices} from "../../services/moviesServices";
+
+import {moviesServices} from "../../services";
 
 const initialState = {
     movies: [],

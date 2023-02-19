@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
+import {Badge} from "react-bootstrap";
 
 import {genreActions} from "../../redux";
-import {Badge} from "react-bootstrap";
 
 const GenreBadge = ({ids}) => {
     let {genres} = useSelector(state => state.genres);

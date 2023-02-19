@@ -15,11 +15,6 @@ const MoviesInfo = ({id}) => {
         dispatch(moviesActions.getById({id}));
         dispatch(moviesActions.getImages({id}));
     }, [id, dispatch]);
-    console.log(images);
-    //     const {
-    //         poster_path, genres, overview, status, tagline, vote_average, vote_count,
-    //         production_countries, production_companies, release_date, runtime, spoken_languages
-    //     } = details;
     return (
         details &&
         <div className={css.container}>

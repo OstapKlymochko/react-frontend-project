@@ -1,16 +1,8 @@
 import React from 'react';
 import {Carousel} from "react-bootstrap";
 
-import {postersURL} from "../../configs/urls";
 
 const TrendsItem = ({title, release_date}) => {
-    // const {trends} = useSelector(state => state.movies);
-    // const dispatch = useDispatch();
-    // useEffect(()=>{
-    //     dispatch(moviesActions.getTrends())
-    // },[dispatch]);
-    // const {title, release_date, poster_path} = props;
-    // console.log(props.props);
     return (
         <Carousel.Item>
             <img

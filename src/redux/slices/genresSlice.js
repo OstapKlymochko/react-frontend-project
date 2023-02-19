@@ -1,5 +1,6 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {genreSevices} from "../../services/genreSevices";
+
+import {genreSevices} from "../../services";
 
 const getAll = createAsyncThunk('genreSlice/getAll',
     async (_, thunkAPI) => {

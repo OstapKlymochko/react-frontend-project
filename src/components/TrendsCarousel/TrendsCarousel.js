@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
-import {Carousel} from "react-bootstrap";
 import {useDispatch, useSelector} from "react-redux";
-import {moviesActions} from "../../redux";
-import {TrendsItem} from "../TrendsItem/TrendsItem";
-import {postersURL} from "../../configs/urls";
+import {Carousel} from "react-bootstrap";
 import {Link} from "react-router-dom";
+
+import {moviesActions} from "../../redux";
+import {postersURL} from "../../configs/urls";
 
 const TrendsCarousel = () => {
     const {trends} = useSelector(state => state.movies);

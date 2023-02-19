@@ -1,10 +1,10 @@
 import React from 'react';
+import {Button, ButtonGroup} from "react-bootstrap";
 
 import css from './Header.module.css';
 import {useTheme} from "../../hooks/useTheme";
 import {Sun} from "../Sun/Sun";
 import {Moon} from "../Moon/Moon";
-import {Button, ButtonGroup} from "react-bootstrap";
 import {UserInfo} from "../UserInfo/UserInfo";
 
 const Header = () => {

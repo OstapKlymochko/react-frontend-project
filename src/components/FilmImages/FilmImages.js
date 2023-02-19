@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {postersURL} from "../../configs/urls";
 
 const FilmImages = ({images}) => {
