@@ -1,10 +1,11 @@
 import React from 'react';
-
+import css from './UserInfo.module.css'
 const UserInfo = () => {
+
     return (
-        <div>
-            UserInfo
-        </div>
+        <>
+            <div className={css.photo}><span>O</span></div>
+        </>
     );
 };
 

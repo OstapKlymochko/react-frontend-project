@@ -15,7 +15,7 @@ const App = () => {
         <Routes>
             <Route path={'/'} element={<MainLayout/>}>
                 <Route index element={<Navigate to={'movies'}/>}/>
-                <Route path={'movies'} element={<MoviesPage/>}/>
+                <Route exact path={'movies'} element={<MoviesPage/>}/>
                 <Route exact path={'/movies/:id'} element={<MovieDetailsPage/>}/>
             </Route>
         </Routes>

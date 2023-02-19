@@ -29,14 +29,15 @@ const MovieCard = ({film}) => {
     //     "vote_average": 7.5,
     //     "vote_count": 3161
     // }
-    const {id, original_title, vote_average, vote_count, poster_path, release_date, genre_ids} = film;
+    const {id, title, vote_average, vote_count, poster_path, release_date, genre_ids} = film;
 
     return (
         <div className={css.card}>
             <PosterPreview path={poster_path}/>
             <StarsRating rate={vote_average}/>
             <p>{vote_count} votes</p>
-            <Link to={{pathname: `/movies/${id}`}}>{original_title}</Link>
+            <Link to={{pathname: `/movies/${id}`}} state={id}>{title}</Link>
+            <p>{release_date.split('-')[0]}</p>
             <GenreBadge ids={genre_ids}/>
         </div>
     );

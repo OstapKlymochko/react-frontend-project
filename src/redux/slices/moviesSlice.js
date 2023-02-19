@@ -3,24 +3,50 @@ import {moviesServices} from "../../services/moviesServices";
 
 const initialState = {
     movies: [],
-    next: null,
-    prev: null,
-    errors: null,
-    loading: null
+    trends: [],
+    details: null,
+    images: [],
 }
 
-let getAll = createAsyncThunk('moviesSlice/getAll',
+const getAll = createAsyncThunk('moviesSlice/getAll',
     async ({page}, thunkAPI) => {
         try {
-            const {data: {results}} = await moviesServices.getAll();
+            const {data: {results}} = await moviesServices.getAll(page);
             return results;
         } catch (e) {
             return thunkAPI.rejectWithValue(e.response?.data)
         }
     })
 
+const getTrends = createAsyncThunk('moviesSlice/getTrends',
+    async (_, thunkAPI) => {
+        try {
+            const {data: {results}} = await moviesServices.getTodayTrends();
+            return results;
+        } catch (e) {
+            return thunkAPI.rejectWithValue(e.response?.data);
+        }
+    });
+const getById = createAsyncThunk('moviesSlice/getById',
+    async ({id}, thunkAPI) => {
+        try {
+            const {data} = await moviesServices.getById(id);
+            return data;
+        } catch (e) {
+            return thunkAPI.rejectWithValue(e.response?.data);
+        }
+    });
+const getImages = createAsyncThunk('moviesSlice/getImages',
+    async ({id}, thunkAPI) => {
+        try {
+            const {data: {backdrops}} = await moviesServices.getImages(id)
+            return backdrops.slice(0, 5);
+        } catch (e) {
+            return thunkAPI.rejectWithValue(e.response?.data);
+        }
+    })
 
-let moviesSlice = createSlice({
+const moviesSlice = createSlice({
     name: 'moviesSlice',
     initialState,
     reducers: {},
@@ -28,16 +54,28 @@ let moviesSlice = createSlice({
         .addCase(getAll.fulfilled, (state, action) => {
             state.movies = action.payload;
         })
+        .addCase(getTrends.fulfilled, (state, action) => {
+            state.trends = action.payload;
+        })
+        .addCase(getById.fulfilled, (state, action) => {
+            state.details = action.payload;
+        })
+        .addCase(getImages.fulfilled, (state, action) => {
+            state.images = action.payload;
+        })
 })
 
 const {reducer: movieReducer} = moviesSlice;
 
-const carActions = {
-    getAll
+const moviesActions = {
+    getAll,
+    getTrends,
+    getById,
+    getImages
 }
 
 export {
-    carActions,
+    moviesActions,
     moviesSlice,
     movieReducer
 }

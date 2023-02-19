@@ -11,7 +11,15 @@
 }
 .logo{
     width: 10%;
-    border: 1px solid black;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo_text{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color:royalblue;
 }
 .links{
     width: 60%;
@@ -19,19 +27,20 @@
 }
 .themesSwitcher{
     width: 5%;
-    border: 1px solid black;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button{
+    margin: 0 10px;
 }
 .user{
-    width: 10%;
-    border: 1px solid black;
-
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .search{
-    width: 10%;
+    width: 15%;
     border: 1px solid black;
-}
-i{
-    width: auto;
-    height: auto;
 }
