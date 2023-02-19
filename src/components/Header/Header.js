@@ -16,16 +16,15 @@ const Header = () => {
             <div className={css.logo}>
                 <span className={css.logo_text}>Some Awesome Logo</span>
             </div>
-            <div className={css.links}>
-
-            </div>
             <div className={css.themesSwitcher}>
                 <ButtonGroup>
                     <Button value={theme} variant={variant} onClick={()=> setTheme('light')}><Sun/></Button>
                     <Button value={theme} variant={variant} onClick={()=> setTheme('dark')}><Moon/></Button>
                 </ButtonGroup>
             </div>
-            <div className={css.search}></div>
+            <div className={css.search}>
+
+            </div>
             <div className={css.user}>
                 <UserInfo/>
             </div>

@@ -5,13 +5,13 @@ const MoviesPagination = ({page, setQuery}) => {
     // console.log(1786 - page);
     const items = [];
     const changePage = (num)=>{
-        setQuery({page: num});
+        setQuery({page:num});
         window.scrollTo({
             top:700,
             behavior:"smooth"
         })
     }
-
+// debugger;
     if (+page <= 490) {
         for (let i = +page; i < +page + 10; i++) {
             items.push(<Pagination.Item key={i} active={+page === i} onClick={() => changePage(i)}>{i}</Pagination.Item>)

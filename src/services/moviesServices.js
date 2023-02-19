@@ -3,6 +3,10 @@ import {urls} from "../configs/urls";
 
 const moviesServices = {
     getAll: (page = 1) => apiServices.get(urls.discover.discover, {params: {page}}),
+    getAllWithGenres: (page = 1, with_genres = null) => {
+        const genreId = with_genres ? with_genres : '';
+        return apiServices.get(`${urls.discover.discover}?page=${page}&with_genres=${genreId}`)
+    },
     getTodayTrends: () => apiServices.get(urls.trending.trending),
     getById: (id) => apiServices.get(`${urls.movie.movie}/${id}`),
     getImages: (id) => apiServices.get(`${urls.movie.movie}/${id}/${urls.images.images}`)

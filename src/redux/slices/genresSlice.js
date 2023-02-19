@@ -13,7 +13,7 @@ const getAll = createAsyncThunk('genreSlice/getAll',
     });
 
 const initialState = {
-    genres: []
+    genres: [],
 };
 const genreSlice = createSlice({
     name: 'genreSlice',

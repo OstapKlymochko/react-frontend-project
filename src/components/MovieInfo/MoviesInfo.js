@@ -1,20 +1,12 @@
-import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import {Badge} from "react-bootstrap";
+import React from 'react';
 
-import {moviesActions} from "../../redux";
 import css from './MovieInfo.module.css';
 import {postersURL} from "../../configs/urls";
 import {StarsRating} from "../StarsRating/StarsRating";
 import {FilmImages} from "../FilmImages/FilmImages";
+import {GenreBadge} from "../GenreBadge/GenreBadge";
 
-const MoviesInfo = ({id}) => {
-    const {details, images} = useSelector(state => state.movies);
-    let dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(moviesActions.getById({id}));
-        dispatch(moviesActions.getImages({id}));
-    }, [id, dispatch]);
+const MoviesInfo = ({details,images}) => {
     return (
         details &&
         <div className={css.container}>
@@ -39,7 +31,7 @@ const MoviesInfo = ({id}) => {
                     </div>
                     <div>
                         <h2 className={css.titles}>Country: </h2>
-                        <span className={css.text}>
+                        <span className={css.text} >
                             {details.production_countries.map((country, index) => {
                                 const sep = index !== details.production_countries.length - 1 ? ', ' : '';
                                 return `${country.name}${sep}`;
@@ -49,8 +41,7 @@ const MoviesInfo = ({id}) => {
                     <div>
                         <h2 className={css.titles}>Genres: </h2>
                         <span className={css.text}>
-                            {details.genres.map(genre => <Badge key={genre.id} pill bg={'primary'}
-                                                                style={{margin: '1px'}}>{genre.name}</Badge>)}
+                            <GenreBadge ids={details.genres.map(val => val.id)}/>
                         </span>
                     </div>
                     <div>

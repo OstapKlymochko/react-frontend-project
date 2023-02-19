@@ -1,20 +1,18 @@
-import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from "react-redux";
+import React from 'react';
 import {Badge} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
-import {genreActions} from "../../redux";
+import css from './Badge.module.css';
 
 const GenreBadge = ({ids}) => {
-    let {genres} = useSelector(state => state.genres);
-    let dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(genreActions.getAll());
-    }, [dispatch]);
+        const genres = JSON.parse(localStorage.getItem('Genres')) || [];
     return (
-        <div style={{display:'flex', flexWrap:'wrap', margin:'1px'}}>
-            {/*{ids.map(val => <span key={val}  className="badge rounded-pill text-bg-primary">{genres.val}</span>)}*/}
-            {genres.filter(val => ids.includes(val.id)).map(val=> {
-                return <Badge key={val.id} pill bg={'primary'} style={{margin:'1px'}}>{val.name}</Badge>
+        <div style={{display: 'flex', flexWrap: 'wrap', margin: '1px'}}>
+            {genres.filter(val => ids.includes(val.id)).map(val => {
+                return <Badge key={val.id} pill bg={'primary'}
+                               style={{margin: '1px'}}>
+                    <Link to={'/genre-movies'} className={css.badge_text} onClick={()=>localStorage.setItem('genreId', val.id)}>{val.name}</Link>
+                </Badge>
             })}
         </div>
     );
