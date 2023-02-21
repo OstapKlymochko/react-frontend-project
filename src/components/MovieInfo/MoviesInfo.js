@@ -77,7 +77,8 @@ const MoviesInfo = ({details, images, trailer}) => {
                     title={'trailer'}
                     width={900}
                     height={600}
-                    src={`http://www.youtube.com/embed/${trailer.key}`}></iframe>
+                    src={`http://www.youtube.com/embed/${trailer.key}`}>
+                </iframe>
             </div>}
         </div>
     );

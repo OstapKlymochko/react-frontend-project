@@ -11,7 +11,7 @@ const MoviesPagination = ({page, setQuery, pagesCount = 500}) => {
             behavior: "smooth"
         })
     }
-    const show = pagesCount >= 10 ? 10 : pagesCount
+    const show = pagesCount >= 10 ? 10 : pagesCount;
     if (+page <= Math.abs(pagesCount - show)) {
         items.push(<Pagination.Item key={+page} active>{+page}</Pagination.Item>)
         for (let i = +page + 1; i < +page + show; i++) {
@@ -42,7 +42,7 @@ const MoviesPagination = ({page, setQuery, pagesCount = 500}) => {
         <Pagination>
             <Pagination.Prev key={-1} disabled={page === '1'} onClick={() => changePage(+page - 1)}/>
             {items}
-            <Pagination.Next key={1}  disabled={page === pagesCount.toString()} onClick={() => changePage(+page + 1)}/>
+            <Pagination.Next key={1} disabled={page === pagesCount.toString()} onClick={() => changePage(+page + 1)}/>
         </Pagination>
     );
 };

@@ -16,7 +16,7 @@ const Header = () => {
     return (
         <div className={css.header}>
             <div className={css.logo}>
-                <span className={css.logo_text} onClick={() => navigate('movies')}>Some Awesome Logo</span>
+                <span className={css.logo_text} onClick={() => navigate('movies?page=1')}>Some Awesome Logo</span>
             </div>
             <div className={css.themesSwitcher}>
                 <ButtonGroup>

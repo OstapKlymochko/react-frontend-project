@@ -6,10 +6,11 @@ import './Search.css';
 
 const Search = () => {
     const navigate = useNavigate();
-    const {register, handleSubmit,} = useForm();
+    const {register, handleSubmit,reset} = useForm();
     const submit = (val) => {
         localStorage.setItem('keywords', val.search);
         navigate('/search-movies');
+        reset();
     };
 
     return (
