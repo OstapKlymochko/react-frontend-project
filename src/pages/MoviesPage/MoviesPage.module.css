@@ -4,16 +4,17 @@
     flex-direction: column;
     box-sizing: border-box;
     padding: 50px 50px 0 50px;
-    /*justify-content: space-between;*/
+    /*justify-content: center;*/
 }
 
 .movies {
-    margin-top: 50px;
+    margin: 50px 0 0;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     flex-wrap: wrap;
-    width:100%;
+    width: 90%;
+    box-sizing: border-box;
 }
 
 .trends {
@@ -42,6 +43,7 @@ ul li a {
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 50px;
 }
 
 

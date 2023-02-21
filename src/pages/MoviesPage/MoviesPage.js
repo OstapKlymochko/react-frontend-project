@@ -8,23 +8,23 @@ import {TrendsCarousel} from "../../components/TrendsCarousel/TrendsCarousel";
 import css from './MoviesPage.module.css'
 
 const MoviesPage = () => {
-    let [query, setQuery] = useSearchParams({page: '1', with_genres:null});
+    let [query, setQuery] = useSearchParams({page: '1', with_genres: null});
     let page = query.get('page');
     let genre_id = query.get('with_genres');
     const {movies} = useSelector(state => state.movies);
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(moviesActions.getAll({page,genre_id}));
-    }, [dispatch, page,genre_id]);
+        dispatch(moviesActions.getAll({page, genre_id}));
+    }, [dispatch, page, genre_id]);
 
     return (
         <div className={css.container}>
             <div className={css.trends}><TrendsCarousel/></div>
-            <div>
-                <div className={css.movies}>
-                    <MoviesList movies={movies}/>
-                </div>
+
+            <div className={css.movies}>
+                <MoviesList movies={movies}/>
             </div>
+
             <div className={css.pag}>
                 <MoviesPagination page={page} setQuery={setQuery}/>
             </div>
