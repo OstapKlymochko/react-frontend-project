@@ -9,7 +9,6 @@ import {genreActions} from "./redux";
 const App = () => {
     const {genres} = useSelector(state => state.genres);
     const dispatch = useDispatch();
-//aaaaaaaaaaaaaaaaaaaaaaaaaaaaa
     useEffect(() => {
         dispatch(genreActions.getAll());
     }, [dispatch]);
