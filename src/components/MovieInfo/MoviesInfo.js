@@ -5,8 +5,12 @@ import {postersURL} from "../../configs/urls";
 import {StarsRating} from "../StarsRating/StarsRating";
 import {FilmImages} from "../FilmImages/FilmImages";
 import {GenreBadge} from "../GenreBadge/GenreBadge";
+import YouTube from "react-youtube";
 
 const MoviesInfo = ({details, images, trailer}) => {
+    console.log(details);
+    console.log(images);
+    console.log(trailer);
 
     return (
         details &&
@@ -70,16 +74,8 @@ const MoviesInfo = ({details, images, trailer}) => {
             <div className={css.movie_images}>
                 {images && <FilmImages images={images}/>}
             </div>
-
-            {trailer && <div className={css.trailer}>
-                <iframe
-                    allowFullScreen={true}
-                    title={'trailer'}
-                    width={900}
-                    height={600}
-                    src={`http://www.youtube.com/embed/${trailer.key}`}>
-                </iframe>
-            </div>}
+            {/*{trailer && <YouTube videoId={trailer.key} />}*/}
+            {trailer && <iframe src={`http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"`}></iframe>}
         </div>
     );
 }

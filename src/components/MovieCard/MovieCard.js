@@ -13,7 +13,7 @@ const MovieCard = ({film}) => {
             <PosterPreview path={poster_path}/>
             <StarsRating rate={vote_average}/>
             <p>{vote_count} votes</p>
-            <Link to={{pathname: `/movies/${id}`}} state={id}>{title}</Link>
+            <Link to={`/movies/${id}`} state={id}>{title}</Link>
             <p>{release_date.split('-')[0]}</p>
             <GenreBadge ids={genre_ids}/>
         </div>
