@@ -2,11 +2,10 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {useSearchParams} from "react-router-dom";
 
+import {moviesActions} from "../../redux";
 import {MoviesList, MoviesPagination} from "../../components";
 import {TrendsCarousel} from "../../components/TrendsCarousel/TrendsCarousel";
 import css from './MoviesPage.module.css'
-import {moviesActions} from "../../redux";
-import {GenresLinksList} from "../../components/GenresLinksList/GenresLinksList";
 
 const MoviesPage = () => {
     let [query, setQuery] = useSearchParams({page: '1', with_genres:null});
@@ -21,13 +20,10 @@ const MoviesPage = () => {
     return (
         <div className={css.container}>
             <div className={css.trends}><TrendsCarousel/></div>
-            <div className={css.moviesGenres}>
+            <div>
                 <div className={css.movies}>
                     <MoviesList movies={movies}/>
                 </div>
-                {/*<div className={css.genres}>*/}
-                {/*    <GenresLinksList/>*/}
-                {/*</div>*/}
             </div>
             <div className={css.pag}>
                 <MoviesPagination page={page} setQuery={setQuery}/>

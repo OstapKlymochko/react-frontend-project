@@ -7,7 +7,8 @@ const initialState = {
     trends: [],
     details: null,
     images: [],
-    moviesWithGenres: []
+    moviesWithGenres: [],
+    moviesByKeyWords: {}
 }
 
 const getAll = createAsyncThunk('moviesSlice/getAll',
@@ -29,6 +30,16 @@ const getAllWithGenres = createAsyncThunk('moviesSlice/getAllWithGenres',
             return thunkAPI.rejectWithValue(e.response?.data);
         }
     })
+
+const getAllByKeyWord = createAsyncThunk('moviesSlice/getAllWithKeyWord',
+    async ({page, keywords}, thunkAPI) => {
+        try {
+            const {data: {results, total_pages}} = await moviesServices.getAllByKeyword(page, keywords);
+            return {results, total_pages}
+        } catch (e) {
+            return thunkAPI.rejectWithValue(e.response?.data);
+        }
+    });
 
 const getTrends = createAsyncThunk('moviesSlice/getTrends',
     async (_, thunkAPI) => {
@@ -78,6 +89,9 @@ const moviesSlice = createSlice({
         .addCase(getAllWithGenres.fulfilled, (state, action) => {
             state.moviesWithGenres = action.payload;
         })
+        .addCase(getAllByKeyWord.fulfilled, (state, action) => {
+            state.moviesByKeyWords = action.payload;
+        })
 })
 
 const {reducer: movieReducer} = moviesSlice;
@@ -87,7 +101,8 @@ const moviesActions = {
     getTrends,
     getById,
     getImages,
-    getAllWithGenres
+    getAllWithGenres,
+    getAllByKeyWord
 }
 
 export {

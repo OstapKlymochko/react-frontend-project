@@ -6,21 +6,26 @@ const movie = '/movie';
 const genres = '/genre/movie/list';
 const trending = '/trending/movie/day';
 const images = '/images';
+const search = '/search';
+
 const urls = {
-    discover:{
+    discover: {
         discover
     },
-    trending:{
+    trending: {
         trending
     },
-    genres:{
+    genres: {
         genres
     },
-    movie:{
+    movie: {
         movie
     },
-    images:{
+    images: {
         images
+    },
+    search: {
+        search: search + movie
     }
 }
 

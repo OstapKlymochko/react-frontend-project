@@ -9,3 +9,4 @@ export * from './PosterPreview/PosterPreview';
 export * from './Sun/Sun';
 export * from './Moon/Moon';
 export * from './Pagination/MoviesPagination';
+export * from './Search/Search';

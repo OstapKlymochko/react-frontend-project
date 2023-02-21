@@ -1,8 +1,9 @@
 .container {
+    width: 100%;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    padding: 50px 0 0 50px;
+    padding: 50px 50px 0 50px;
     /*justify-content: space-between;*/
 }
 
@@ -12,7 +13,7 @@
     justify-content: space-between;
     align-items: baseline;
     flex-wrap: wrap;
-    width: 80%;
+    width:100%;
 }
 
 .trends {
@@ -43,12 +44,6 @@ ul li a {
     justify-content: center;
 }
 
-.moviesGenres {
-    display: flex;
-}
 
-.genres .badge{
-    margin-top: 100px;
-    width: 20%;
-}
+
 

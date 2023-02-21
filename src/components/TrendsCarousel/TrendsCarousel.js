@@ -12,7 +12,6 @@ const TrendsCarousel = () => {
     useEffect(() => {
         dispatch(moviesActions.getTrends())
     }, [dispatch]);
-    // const {title, genre_ids, release_date, poster_path} = trends;
 
     return (
         !!trends.length &&

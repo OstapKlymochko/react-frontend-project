@@ -1,10 +1,10 @@
 import {apiServices} from "./apiServices";
 import {urls} from "../configs/urls";
 
-const genreSevices = {
+const genreServices = {
     getAll: ()=> apiServices.get(urls.genres.genres)
 }
 
 export {
-    genreSevices
+    genreServices
 }

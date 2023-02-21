@@ -7,12 +7,10 @@ const TrendsItem = ({title, release_date}) => {
         <Carousel.Item>
             <img
                 className="d-block w-100"
-                // src={`${postersURL}${poster_path}`}
                 alt="First slide"
             />
             <Carousel.Caption>
                 <h3>{title} {release_date}</h3>
-                {/*<p></p>*/}
             </Carousel.Caption>
         </Carousel.Item>
     );

@@ -1,11 +1,11 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
-import {genreSevices} from "../../services";
+import {genreServices} from "../../services";
 
 const getAll = createAsyncThunk('genreSlice/getAll',
     async (_, thunkAPI) => {
         try {
-            const {data:{genres}} = await genreSevices.getAll();
+            const {data:{genres}} = await genreServices.getAll();
             return genres;
         } catch (e) {
             return thunkAPI.rejectWithValue(e.response?.data);
