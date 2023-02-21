@@ -3,6 +3,7 @@
     margin-top: 50px;
     box-sizing: border-box;
     padding: 30px;
+    /*height: calc(100vh - 194px);*/
 }
 
 .image_data {
@@ -45,4 +46,14 @@
     width: 335px;
     height: 335px;
     margin: 0 15px;
+}
+
+.trailer {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.trailer iframe {
+    border-radius: 10px;
 }

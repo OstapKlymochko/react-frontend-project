@@ -8,7 +8,8 @@ const initialState = {
     details: null,
     images: [],
     moviesWithGenres: [],
-    moviesByKeyWords: {}
+    moviesByKeyWords: {},
+    trailerPath: null
 }
 
 const getAll = createAsyncThunk('moviesSlice/getAll',
@@ -69,6 +70,17 @@ const getImages = createAsyncThunk('moviesSlice/getImages',
         }
     })
 
+const getTrailer = createAsyncThunk('moviesSlice/getTrailer',
+    async ({id}, thunkAPI) => {
+        try {
+            const {data: {results}} = await moviesServices.getVideos(id);
+
+            return results.filter(value => value.type === 'Trailer')[0];
+        } catch (e) {
+            return thunkAPI.rejectWithValue(e.response?.data);
+        }
+    });
+
 const moviesSlice = createSlice({
     name: 'moviesSlice',
     initialState,
@@ -92,6 +104,9 @@ const moviesSlice = createSlice({
         .addCase(getAllByKeyWord.fulfilled, (state, action) => {
             state.moviesByKeyWords = action.payload;
         })
+        .addCase(getTrailer.fulfilled, (state, action) => {
+            state.trailerPath = action.payload;
+        })
 })
 
 const {reducer: movieReducer} = moviesSlice;
@@ -102,7 +117,8 @@ const moviesActions = {
     getById,
     getImages,
     getAllWithGenres,
-    getAllByKeyWord
+    getAllByKeyWord,
+    getTrailer
 }
 
 export {

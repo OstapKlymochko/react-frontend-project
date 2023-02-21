@@ -6,15 +6,16 @@ import {StarsRating} from "../StarsRating/StarsRating";
 import {FilmImages} from "../FilmImages/FilmImages";
 import {GenreBadge} from "../GenreBadge/GenreBadge";
 
-const MoviesInfo = ({details,images}) => {
+const MoviesInfo = ({details, images, trailer}) => {
+
     return (
         details &&
         <div className={css.container}>
             <div className={css.image_data}>
                 <div className={css.poster_div}>
-                    <img src={`${postersURL}/${details.poster_path}`} alt="poster" className={css.poster}/>
-                    <StarsRating rate={details.vote_average}/>
-                    <span className={css.text}>{details.vote_count} votes</span>
+                    <img src={
+                        details.poster_path ? `${postersURL}/${details.poster_path}` : 'https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg'
+                    } alt="poster" className={css.poster}/>
                 </div>
                 <div className={css.data}>
                     <div>
@@ -31,7 +32,7 @@ const MoviesInfo = ({details,images}) => {
                     </div>
                     <div>
                         <h2 className={css.titles}>Country: </h2>
-                        <span className={css.text} >
+                        <span className={css.text}>
                             {details.production_countries.map((country, index) => {
                                 const sep = index !== details.production_countries.length - 1 ? ', ' : '';
                                 return `${country.name}${sep}`;
@@ -62,10 +63,22 @@ const MoviesInfo = ({details,images}) => {
                     </div>
                 </div>
             </div>
-
+            <div>
+                <StarsRating rate={details.vote_average}/>
+                <span className={css.text}>{details.vote_count} votes</span>
+            </div>
             <div className={css.movie_images}>
                 {images && <FilmImages images={images}/>}
             </div>
+
+            {trailer && <div className={css.trailer}>
+                <iframe
+                    allowFullScreen={true}
+                    title={'trailer'}
+                    width={900}
+                    height={600}
+                    src={`http://www.youtube.com/embed/${trailer.key}`}></iframe>
+            </div>}
         </div>
     );
 }
