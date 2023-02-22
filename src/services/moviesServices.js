@@ -12,7 +12,7 @@ const moviesServices = {
         return apiServices.get(`${urls.search.search}?query=${keyWords}&page=${page}`)
     },
     getTodayTrends: () => apiServices.get(urls.trending.trending),
-    getById: (id) => apiServices.get(`${urls.movie.movie}/${id}?append_to_response=video`),
+    getById: (id) => apiServices.get(`${urls.movie.movie}/${id}`),
     getImages: (id) => apiServices.get(`${urls.movie.movie}/${id}/${urls.images.images}`),
     getVideos: (id) => apiServices.get(`${urls.movie.movie}/${id}/videos`)
 }

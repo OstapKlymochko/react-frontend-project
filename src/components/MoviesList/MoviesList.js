@@ -6,8 +6,10 @@ const MoviesList = ({movies}) => {
     return (
         <>
             {!!movies.length &&
-                <div style={{display: 'flex', justifyContent: 'center', alignItems:'baseline',
-                    flexWrap: 'wrap'}}>{movies.map(film =><MovieCard key={film.id} film={film}/>)}</div>}
+                <div style={{
+                    display: 'flex', justifyContent: 'center', alignItems: 'baseline',
+                    flexWrap: 'wrap'
+                }}>{movies.map(film => <MovieCard key={film.id} film={film}/>)}</div>}
         </>
     );
 };

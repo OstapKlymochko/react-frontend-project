@@ -118,7 +118,8 @@ const moviesActions = {
     getImages,
     getAllWithGenres,
     getAllByKeyWord,
-    getTrailer
+    getTrailer,
+
 }
 
 export {
