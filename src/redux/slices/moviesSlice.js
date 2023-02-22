@@ -75,7 +75,7 @@ const getTrailer = createAsyncThunk('moviesSlice/getTrailer',
         try {
             const {data: {results}} = await moviesServices.getVideos(id);
 
-            return results.filter(value => value.type === 'Trailer')[0];
+            return results.filter(value => value.type === 'Trailer')[0].key;
         } catch (e) {
             return thunkAPI.rejectWithValue(e.response?.data);
         }

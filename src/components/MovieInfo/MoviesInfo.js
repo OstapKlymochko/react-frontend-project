@@ -8,9 +8,9 @@ import {GenreBadge} from "../GenreBadge/GenreBadge";
 import shortid from "shortid";
 // import YouTube from "react-youtube";
 
-const MoviesInfo = ({details, images}) => {
+const MoviesInfo = ({details, images, trailer}) => {
     const {
-        poster_path, original_title, tagline, release_date, production_countries, genres,
+        id, poster_path, original_title, tagline, release_date, production_countries, genres,
         runtime, overview, production_companies, vote_average, vote_count
     } = details;
 
@@ -22,7 +22,7 @@ const MoviesInfo = ({details, images}) => {
         const sep = index !== details.production_countries.length - 1 ? ', ' : '';
         return `${country.name}${sep}`;
     });
-    const path =  poster_path ? `${postersURL}/${poster_path}` : 'https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg';
+    const path = poster_path ? `${postersURL}/${poster_path}` : 'https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg';
     return (
         details &&
         <div className={css.container}>
@@ -77,13 +77,14 @@ const MoviesInfo = ({details, images}) => {
             <div className={css.movie_images}>
                 {images && <FilmImages images={images}/>}
             </div>
-            {/*{trailer && <iframe title={'trailer'}*/}
-            {/*                    width={800}*/}
-            {/*                    height={500}*/}
-            {/*                    loading={"lazy"}*/}
-            {/*                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"*/}
-            {/*                    src={`http://www.youtube-nocookie.com/embed/${trailer.key}`}>*/}
-            {/*</iframe>}*/}
+
+            <div className={css.trailer}>{trailer && <iframe title={'trailer'}
+                                                             key={id}
+                                                             width={800}
+                                                             height={500}
+                                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                             src={`http://www.youtube-nocookie.com/embed/${trailer}`}>
+            </iframe>}</div>
         </div>
     );
 }

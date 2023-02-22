@@ -7,15 +7,15 @@ import {moviesActions} from "../../redux";
 
 const MovieDetailsPage = () => {
     const {state:id} = useLocation();
-    const {details, images} = useSelector(state => state.movies);
+    const {details, images,trailerPath} = useSelector(state => state.movies);
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(moviesActions.getById({id}));
         dispatch(moviesActions.getImages({id}));
+        dispatch(moviesActions.getTrailer({id}));
     }, [dispatch,id]);
-
     return (
-        details && <MoviesInfo details={details} images={images}/>
+        details && <MoviesInfo details={details} images={images} trailer={trailerPath}/>
     );
 };
 
