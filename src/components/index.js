@@ -10,3 +10,4 @@ export * from './Sun/Sun';
 export * from './Moon/Moon';
 export * from './Pagination/MoviesPagination';
 export * from './Search/Search';
+export * from './Trailer/Trailer';

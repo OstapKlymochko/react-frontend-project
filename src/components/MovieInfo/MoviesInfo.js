@@ -1,12 +1,12 @@
 import React from 'react';
+import shortid from "shortid";
 
 import css from './MovieInfo.module.css';
 import {postersURL} from "../../configs/urls";
 import {StarsRating} from "../StarsRating/StarsRating";
 import {FilmImages} from "../FilmImages/FilmImages";
 import {GenreBadge} from "../GenreBadge/GenreBadge";
-import shortid from "shortid";
-// import YouTube from "react-youtube";
+import {Trailer} from "../Trailer/Trailer";
 
 const MoviesInfo = ({details, images, trailer}) => {
     const {
@@ -78,13 +78,8 @@ const MoviesInfo = ({details, images, trailer}) => {
                 {images && <FilmImages images={images}/>}
             </div>
 
-            <div className={css.trailer}>{trailer && <iframe title={'trailer'}
-                                                             key={id}
-                                                             width={800}
-                                                             height={500}
-                                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                             src={`http://www.youtube-nocookie.com/embed/${trailer}`}>
-            </iframe>}</div>
+            <div className={css.trailer}>{trailer && <Trailer trailer={trailer} id={id}/>}
+            </div>
         </div>
     );
 }

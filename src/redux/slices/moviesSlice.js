@@ -107,6 +107,9 @@ const moviesSlice = createSlice({
         .addCase(getTrailer.fulfilled, (state, action) => {
             state.trailerPath = action.payload;
         })
+        .addCase(getTrailer.rejected, state => {
+            state.trailerPath = null;
+        })
 })
 
 const {reducer: movieReducer} = moviesSlice;
