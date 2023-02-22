@@ -1,5 +1,5 @@
 import {apiServices} from "./apiServices";
-import {urls} from "../configs/urls";
+import {urls} from "../configs";
 
 const moviesServices = {
     getAll: (page = 1) => apiServices.get(urls.discover.discover, {params: {page}}),
