@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {MainLayout} from "./layouts";
 import {GenresFilmPage, MovieDetailsPage, MoviesPage, SearchFilmPage} from "./pages";
 import {genreActions} from "./redux";
-
+// AAAAAAAAAAAAAAAAAA
 const App = () => {
     const {genres} = useSelector(state => state.genres);
     const dispatch = useDispatch();
