@@ -1,11 +1,13 @@
 import {FC} from 'react';
 
-const App:FC  = () => {
- return (
-  <div>
-   App
-  </div>
- );
+
+const App: FC = () => {
+
+    return (
+        <div>
+            App
+        </div>
+    );
 };
 
 export {App};

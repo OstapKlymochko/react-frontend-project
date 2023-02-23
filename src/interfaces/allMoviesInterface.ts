@@ -1,4 +1,4 @@
-type IMovie = {
+export type IMovie = {
     adult: boolean;
     backdrop_path: string|null;
     genre_ids: number[];

@@ -14,15 +14,18 @@ type ICompany = {
     name: string;
     origin_country: string;
 }
+
 type ICountry = {
     iso_3166_1: string;
     name: string;
 }
+
 type ILanguage = {
     english_name: string;
     iso_639_1: string;
     name: string;
 }
+
 export type IDetails = {
     adult: boolean;
     backdrop_path: string | null;
