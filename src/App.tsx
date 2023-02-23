@@ -5,7 +5,6 @@ import {useAppDispatch, useAppSelector} from "./hooks";
 import {genreActions} from "./redux";
 import {MainLayout} from "./layouts/MainLayout";
 import {GenresFilmPage, MovieDetailsPage, MoviesPage, SearchFilmPage} from "./pages";
-import {Simulate} from "react-dom/test-utils";
 
 const App: FC = () => {
     const {genres} = useAppSelector(state => state.genreReducer);
