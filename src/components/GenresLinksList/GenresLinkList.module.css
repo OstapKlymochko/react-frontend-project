@@ -1,0 +1,9 @@
+.genresContainer{
+    position: relative;
+    top:25px;
+    box-sizing: border-box;
+    padding-left: 100px;
+}
+.genresContainer > h3{
+    color: var(--text-color);
+}

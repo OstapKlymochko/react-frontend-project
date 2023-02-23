@@ -15,7 +15,7 @@ interface IState {
     details: IDetails | null;
     images: IPhotos['backdrops'];
     moviesWithGenres: IMovies['results'];
-    moviesByKeyWords: IMovieKeyword | {};
+    moviesByKeyWords: IMovieKeyword | null;
     trailerPath: string | null;
 }
 
@@ -25,7 +25,7 @@ const initialState: IState = {
     details: null,
     images: [],
     moviesWithGenres: [],
-    moviesByKeyWords: {},
+    moviesByKeyWords: null,
     trailerPath: null
 }
 

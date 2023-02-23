@@ -8,6 +8,7 @@ const getAll = createAsyncThunk<IGenres['genres'], void>('genreSlice/getAll',
     async (_, thunkAPI) => {
         try {
             const {data: {genres}} = await genreServices.getAll();
+            localStorage.setItem('Genres', JSON.stringify(genres));
             return genres;
         } catch (e) {
             const err = e as AxiosError;
