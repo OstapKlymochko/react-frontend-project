@@ -11,8 +11,6 @@ const App: FC = () => {
     const dispatch = useAppDispatch();
     useEffect(() => {
         dispatch(genreActions.getAll());
-        if(!!genres.length){
-        }
     }, [dispatch]);
         localStorage.setItem('Genres', JSON.stringify(genres));
     return (
