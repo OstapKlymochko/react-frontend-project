@@ -1,5 +1,5 @@
 
-.card{
+.card {
     width: 20%;
     display: flex;
     flex-direction: column;
@@ -10,19 +10,45 @@
     margin: 10px 30px;
     /*background: var(--bg-color);*/
 }
-a{
-    text-decoration:none;
+
+a {
+    text-decoration: none;
     /*color: #2e859e;*/
     color: var(--link-color);
 }
-.poster{
+
+.poster {
     width: 350px;
     height: 500px;
 }
 
-@media screen and (max-width: 1650px){
-    .poster{
+@media screen and (max-width: 1680px) {
+    .poster {
         width: 300px;
         height: 450px;
+    }
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1536px) {
+    .poster {
+        width: 280px;
+        height: 400px;
+    }
+}
+
+@media screen and (min-width: 1366px) and (max-width: 1440px) {
+    .card{
+        width: 15%;
+    }
+    .poster {
+        width: 200px;
+        height: 300px;
+    }
+    a{
+        font-size: 0.7rem;
+    }
+    #root > div.MoviesPage_container__N\+whm > div.MoviesPage_movies__QnhR8 > div > div:nth-child(7) > div:nth-child(2) > div > div:nth-child(2) > svg{
+        width: 10px;
+
     }
 }
