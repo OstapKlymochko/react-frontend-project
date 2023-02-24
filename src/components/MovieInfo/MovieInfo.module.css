@@ -57,3 +57,11 @@
 .trailer iframe {
     border-radius: 10px;
 }
+
+@media screen and (max-width: 1890px){
+    .movie_images img {
+        width: 280px;
+        height: 280px;
+        margin: 0 10px;
+    }
+}
