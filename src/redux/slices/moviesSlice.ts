@@ -1,8 +1,8 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {AxiosError} from "axios";
 
 import {moviesServices} from "../../services";
 import {IDetails, IMovies, IPhotos} from "../../interfaces";
-import {AxiosError} from "axios";
 
 interface IMovieKeyword {
     results: IMovies['results'];

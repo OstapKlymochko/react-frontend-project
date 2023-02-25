@@ -1,4 +1,5 @@
 import {FC} from 'react';
+
 import {MovieCard} from "../MovieCard/MovieCard";
 import {IMovies} from "../../interfaces";
 

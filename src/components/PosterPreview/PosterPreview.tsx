@@ -1,4 +1,5 @@
 import {FC} from 'react';
+
 import {postersURL} from "../../configs";
 import css from "../MovieCard/MovieCard.module.css";
 

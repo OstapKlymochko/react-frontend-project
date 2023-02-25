@@ -1,7 +1,8 @@
 import {FC} from 'react';
+import shortid from "shortid";
+
 import {postersURL} from "../../configs";
 import {IPhotos} from "../../interfaces";
-import shortid from "shortid";
 
 interface IProps{
     images:IPhotos['backdrops'];

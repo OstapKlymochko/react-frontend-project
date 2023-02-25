@@ -1,7 +1,7 @@
 import {FC} from 'react';
-import {GenresLinksList, Header} from "../components";
 import {Outlet} from "react-router-dom";
 
+import {GenresLinksList, Header} from "../components";
 
 const MainLayout: FC = () => {
     return (

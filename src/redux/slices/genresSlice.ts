@@ -1,8 +1,8 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {AxiosError} from "axios";
 
 import {genreServices} from "../../services";
 import {IGenres} from "../../interfaces";
-import {AxiosError} from "axios";
 
 const getAll = createAsyncThunk<IGenres['genres'], void>('genreSlice/getAll',
     async (_, thunkAPI) => {
